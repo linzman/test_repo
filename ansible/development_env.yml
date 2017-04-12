@@ -1,0 +1,21 @@
+---
+
+- name: Deploy on OpenStack
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: deploy dev vm
+      os_server:
+        state: present
+        auth:
+          auth_url: http://slpeahhp.cloud:46468/v3
+          username: admin
+          password: sle3per1267
+          project_name: admin
+        name: develop
+        image: 406a8a17-5455-4dcc-9253-23af1a391db9
+        timeout: 200
+        flavor: m1.tiny
+        nics:
+          - net-id: cfcad4c4-63dc-40f0-b38c-d35131d14c94
+

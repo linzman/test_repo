@@ -1,0 +1,18 @@
+[all:children]
+mysql
+webserver
+git
+
+[all:vars]
+ansible_ssh_pass = OpenStack123
+ansible_ssh_user = root
+
+[mysql]
+mysql ansible_ssh_host=10.10.10.6 ansible_ssh_port=22
+
+[webserver]
+web ansible_ssh_host=10.10.10.7 ansible_ssh_port=22
+
+[git]
+git ansible_ssh_host=10.10.10.5 ansible_ssh_port=22
+

@@ -1,0 +1,94 @@
+---
+#firewall
+
+ - name: open https ports
+   firewalld:
+     zone: public
+     service: https    
+     permanent: true
+     state: enabled
+     immediate: true
+
+ - name: open http ports
+   firewalld:
+     zone: public
+     service: http
+     permanent: true
+     state: enabled
+     immediate: true
+     
+ - name: open 9000 port for php
+   firewalld:
+     zone: public
+     port: 9000/tcp
+     permanent: true
+     state: enabled
+     immediate: true
+
+ - name: install nginx
+   yum:
+     name: nginx
+     state: present
+
+ - name: install yumutils
+   yum:
+     name: yum-utils
+     state: present
+ 
+ - name: install php7 repo
+   yum:
+     name: https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+     state: present
+     
+     
+
+ - name: install php7
+   yum:
+     name: "{{ item }}"
+     state: present
+   with_items:
+     - php70w-fpm
+     - php70w-cli 
+     - php70w-gd 
+     - php70w-mcrypt
+     - php70w-mysql 
+     - php70w-pear 
+     - php70w-xml 
+     - php70w-mbstring 
+     - php70w-pdo 
+     - php70w-json 
+     - php70w-pecl-apcu 
+     - php70w-pecl-apcu-devel
+     - git
+
+
+ - name: Configuring PHP
+   copy:
+     src: www.conf
+     dest: /etc/php-fpm.d/www.conf
+     owner: nginx
+     group: nginx
+     mode: 0644
+
+
+ - name: Creates directory /var/lib/php/session
+   file: path=/var/lib/php/session state=directory
+
+       
+ - name: enable and run php-fpm
+   systemd: 
+     name: php-fpm
+     enabled: True
+
+
+
+
+
+
+
+
+
+
+        
+
+

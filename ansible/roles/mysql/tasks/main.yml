@@ -1,0 +1,54 @@
+---
+
+#firewall
+ - name: Set firewall service rules
+   firewalld:
+     zone: public
+     service: mysql
+     permanent: true
+     immediate: true
+     state: enabled
+
+
+
+
+
+#install mysql
+ - name: install mariadb packages
+   yum:
+     name: "{{item  }}"
+     state: present
+   with_items:
+   - mariadb
+   - mariadb-server
+   - MySQL-python
+
+#run service
+ - name: enable and start mysql
+   service:
+     name: mariadb
+     state: started
+     enabled: yes
+
+
+
+
+
+#create database
+ - name: create database
+   mysql_db:
+     name: nextcloud_db
+     state: present
+
+
+
+#create user
+ - name: create user
+   mysql_user:
+     name: nextclouduser
+     password: nextcloudpass
+     priv: '*.*:ALL'
+     state: present
+
+
+
