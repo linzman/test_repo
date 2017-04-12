@@ -1,0 +1,20 @@
+---
+
+ - name: install usefull modules
+   yum:
+     name: "{{ item  }}"
+     state: present 
+  with_items:
+  - gcc
+  - python-pip
+
+ - name: add user nginx
+   user:
+     name: nginx
+     group: nginx
+    
+    
+
+     
+   
+  
