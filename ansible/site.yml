@@ -1,0 +1,12 @@
+---
+
+- name: install nginx
+  hosts: webserver
+  roles:
+  - nginx
+  - nextcloud
+
+- name: install mysql
+  hosts: mysql
+  roles:
+  - mysql
