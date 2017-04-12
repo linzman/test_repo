@@ -1,5 +1,6 @@
 ---
 
+
 - name: install nginx
   hosts: webserver
   roles:
