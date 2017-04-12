@@ -1,0 +1,67 @@
+---
+
+- os_server_actions:
+       action: rebuild
+       auth:
+         auth_url: http://slpeahhp.cloud:46468/v3
+          username: admin
+          password: sle3per1267
+          project_name: admin
+       server: d2e13b39-850d-4dcf-b8bc-20ed4bc1e3f4
+       timeout: 200
+       image: clean_uat_environment
+   
+- os_server_actions:
+       action: rebuild
+       auth:
+         auth_url: http://slpeahhp.cloud:46468/v3
+          username: admin
+          password: sle3per1267
+          project_name: admin
+       server: d91d85db-13d9-4c0e-97d1-eb580258451b
+       timeout: 200
+       image: clean_uat_environment
+
+- os_server_actions:
+       action: rebuild
+       auth:
+         auth_url: http://slpeahhp.cloud:46468/v3
+          username: admin
+          password: sle3per1267
+          project_name: admin
+       server: 4aa0b1a2-6c6f-4627-806d-e68c8f77f53b
+       timeout: 200
+       image: clean_uat_environment
+   
+- os_server_actions:
+       action: rebuild
+       auth:
+         auth_url: http://slpeahhp.cloud:46468/v3
+          username: admin
+          password: sle3per1267
+          project_name: admin
+       server: 6f118940-d3ad-4bd7-a770-a4877f7f1919
+       timeout: 200
+       image: clean_uat_environment
+
+- os_server_actions:
+       action: rebuild
+       auth:
+         auth_url: http://slpeahhp.cloud:46468/v3
+          username: admin
+          password: sle3per1267
+          project_name: admin
+       server: d497707e-6d63-4e5b-bb32-04b62c96315f
+       timeout: 200
+       image: clean_uat_environment
+
+- os_server_actions:
+       action: rebuild
+       auth:
+         auth_url: http://slpeahhp.cloud:46468/v3
+          username: admin
+          password: sle3per1267
+          project_name: admin
+       server: a20650e2-eaa0-4dd5-b2e5-d70029722525
+       timeout: 200
+       image: clean_uat_environment

@@ -16,3 +16,6 @@ web ansible_ssh_host=10.10.10.7 ansible_ssh_port=22
 [git]
 git ansible_ssh_host=10.10.10.5 ansible_ssh_port=22
 
+
+
+
