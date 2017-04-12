@@ -1,0 +1,17 @@
+---
+
+
+ - name: install development branch of NextCloud
+   git:
+     repo: 'https://github.com/linzman/test_repo.git'
+     dest: /usr/share/nginx/html/nextcloud
+     version: develop
+
+
+ - name: do some config
+   file:
+     path: /usr/share/nginx/html/nextcloud/data/ 
+     state: directory
+     group: nginx
+     owner: nginx
+
