@@ -1,10 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh '''pwd
-ls -lah'''
+        sh 'll'
       }
     }
   }
