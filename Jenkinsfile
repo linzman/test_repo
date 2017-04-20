@@ -1,9 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('First Step') {
       steps {
-        sh 'll'
+        echo 'Hello World'
+        echo 'Merge To DEV'
+        echo 'RunTest'
       }
     }
   }
